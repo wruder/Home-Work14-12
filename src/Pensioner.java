@@ -1,4 +1,6 @@
-public class Pensioner extends Person {
+import java.util.Random;
+
+public class Pensioner extends Person implements Employable {
     public static final double PENSIONER_CONSTANT = 2000.0; // константа для пенсионеров
 
     public Pensioner
@@ -27,6 +29,16 @@ public class Pensioner extends Person {
     }
 
 
+    @Override
+    public void goToWork() {
+        Random random = new Random();
+        if (random.nextBoolean()) {
+            System.out.println("я вообще то на пенсии");
+        }
+        else {
+            System.out.println("ОК немного поработаю на благо Родины");
+        }
+    }
 }
 
 

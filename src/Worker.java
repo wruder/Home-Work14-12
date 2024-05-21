@@ -1,4 +1,4 @@
-public class Worker extends Person {
+public class Worker extends Person  implements Employable {
     public Worker() {
         super();
     }
@@ -9,7 +9,7 @@ public class Worker extends Person {
 
     @Override
     public double calculateAverageSalary() {
-        return CalculatorUtil.calculatorAverage(getMinSalary(), getMaxSalary());
+        return CalculatorUtil.calculatorAverage(getMinSalary(), getMaxSalary())/2;
     }
 
     @Override
@@ -23,6 +23,11 @@ public class Worker extends Person {
                 ", уровень IQ=" + getIQ()+
                 '}';
 
+    }
+
+    @Override
+    public void goToWork() {
+        System.out.println("я счастливо шагаю на работу");
     }
 }
 
